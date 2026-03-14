@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: local-chatbot
+  datasource:
+    url: jdbc:h2:file:./chatbotdb;MODE=PostgreSQL;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+
+chatbot:
+  app-name: Local Resume Chatbot (Spring Boot + Ollama)
+  ollama-base-url: http://localhost:11434
+  ollama-model: llama3
+  max-user-message-chars: 2000
